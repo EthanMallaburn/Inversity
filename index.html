@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Official GOV.UK website - public services all in one place">
+    <title>Welcome to GOV.UK - The best place to find government services and information</title>
+    
+    <style>
+        /* Core GOV.UK styles */
+        :root {
+            --govuk-blue: #1d70b8;
+            --govuk-dark-blue: #003078;
+            --govuk-black: #0b0c0c;
+            --govuk-white: #ffffff;
+            --govuk-grey-1: #6f777b;
+            --govuk-grey-2: #b1b4b6;
+            --govuk-grey-3: #f3f2f1;
+            --govuk-green: #00703c;
+            --govuk-yellow: #ffdd00;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "GDS Transport", arial, sans-serif;
+            color: var(--govuk-black);
+            line-height: 1.5;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header styles */
+        #global-header {
+            background-color: var(--govuk-black);
+            padding: 10px 0;
+            border-bottom: 10px solid var(--govuk-white);
+        }
+
+        .header-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .govuk-header__logotype {
+            color: var(--govuk-white);
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+            display: inline-block;
+            padding-right: 15px;
+        }
+
+        .govuk-header__link {
+            color: var(--govuk-white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .govuk-header__auth {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .govuk-button {
+            background-color: var(--govuk-green);
+            color: var(--govuk-white);
+            padding: 10px 15px;
+            font-size: 16px;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .govuk-button:hover {
+            background-color: var(--govuk-dark-blue);
+        }
+
+        /* Service banner */
+        .govuk-phase-banner {
+            border-bottom: 1px solid var(--govuk-grey-2);
+            padding: 10px 0;
+            background: var(--govuk-white);
+        }
+
+        .govuk-phase-banner__content {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .govuk-phase-banner__text {
+            display: inline-block;
+            margin-left: 10px;
+            color: var(--govuk-black);
+        }
+
+        /* Main content */
+        .govuk-width-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .govuk-main-wrapper {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        /* Search box styles */
+        .govuk-search {
+            background: var(--govuk-white);
+            padding: 30px;
+            margin-bottom: 30px;
+            border: 1px solid var(--govuk-grey-2);
+        }
+
+        .govuk-heading-xl {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: var(--govuk-black);
+        }
+
+        .govuk-search-group {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .govuk-search__input {
+            flex-grow: 1;
+            height: 50px;
+            padding: 0 10px;
+            border: 2px solid var(--govuk-black);
+            font-size: 19px;
+        }
+
+        .govuk-search__submit {
+            margin-left: 0;
+            background-color: var(--govuk-green);
+            border: 0;
+            color: var(--govuk-white);
+            cursor: pointer;
+            padding: 0 20px;
+            font-size: 19px;
+            font-weight: bold;
+            height: 50px;
+        }
+
+        /* Popular services section */
+        .govuk-grid-row {
+            display: flex;
+            margin-right: -15px;
+            margin-left: -15px;
+            flex-wrap: wrap;
+        }
+
+        .govuk-grid-column-one-third {
+            width: 33.3333%;
+            padding: 0 15px;
+        }
+
+        .govuk-grid-column-two-thirds {
+            width: 66.6666%;
+            padding: 0 15px;
+        }
+
+        .govuk-heading-m {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--govuk-black);
+        }
+
+        .govuk-list {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        .govuk-list--spaced > li {
+            margin-bottom: 15px;
+        }
+
+        .govuk-list a {
+            color: var(--govuk-blue);
+            text-decoration: underline;
+            font-weight: bold;
+        }
+
+        .govuk-list a:hover {
+            color: var(--govuk-dark-blue);
+            text-decoration: none;
+        }
+
+        /* Popular content section */
+        .govuk-grid-column-full {
+            width: 100%;
+            padding: 0 15px;
+        }
+
+        .popular-content {
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--govuk-white);
+            border: 1px solid var(--govuk-grey-2);
+        }
+
+        /* Dropdown menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--govuk-white);
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            color: var(--govuk-black);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: var(--govuk-grey-3);
+        }
+
+        /* Dyslexia Mode */
+        .dyslexia-friendly {
+            background-color: #f5f5dc; /* Beige background */
+            letter-spacing: 0.1em;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .govuk-grid-column-one-third,
+            .govuk-grid-column-two-thirds {
+                width: 100%;
+            }
+
+            .govuk-heading-xl {
+                font-size: 32px;
+            }
+
+            .govuk-search-group {
+                flex-direction: column;
+            }
+
+            .govuk-search__submit {
+                margin-top: 10px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="global-header">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <a href="/" class="govuk-header__logotype">
+                    GOV.UK
+                </a>
+            </div>
+            <div class="header-proposition">
+                <a href="search.html" class="govuk-header__link">Search</a>
+            </div>
+            <!-- Login/Register Buttons + Dropdown + Dyslexia Mode Toggle -->
+            <div class="govuk-header__auth">
+                <a href="login.html" class="govuk-button">Login</a>
+                <a href="register.html" class="govuk-button">Register</a>
+                <div class="dropdown">
+                    <button class="govuk-button">Explore Features</button>
+                    <div class="dropdown-content">
+                        <a href="feedback.html">Provide Feedback</a>
+                        <a href="student-finance.html">Student Finance</a>
+                        <a href="/services">Public Services</a>
+                    </div>
+                </div>
+                <button onclick="toggleDyslexiaMode()" class="govuk-button">Dyslexia Mode</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="govuk-phase-banner">
+        <div class="govuk-phase-banner__content">
+            <strong class="govuk-tag">BETA</strong>
+            <span class="govuk-phase-banner__text">
+                This is a new service – your <a href="feedback.html">feedback</a> will help us to improve it.
+            </span>
+        </div>
+    </div>
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+            <div class="govuk-search">
+                <h1 class="govuk-heading-xl">Welcome to GOV.UK</h1>
+                <p>The best place to find government services and information</p>
+                <div class="govuk-search-group">
+                    <input type="search" class="govuk-search__input" placeholder="Search GOV.UK">
+                    <button type="submit" class="govuk-search__submit">Search</button>
+                </div>
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <section>
+                        <h2 class="govuk-heading-m">Popular on GOV.UK</h2>
+                        <ul class="govuk-list govuk-list--spaced">
+                            <li><a href="/universal-credit">Universal Credit</a></li>
+                            <li><a href="/driving-test">Book your driving test</a></li>
+                            <li><a href="student-finance.html">Student finance</a></li> <!-- Link to student-finance.html -->
+                            <li><a href="/passport">Get or renew a passport</a></li>
+                        </ul>
+                    </section>
+                </div>
+
+                <div class="govuk-grid-column-one-third">
+                    <section>
+                        <h2 class="govuk-heading-m">Quick links</h2>
+                        <ul class="govuk-list govuk-list--spaced">
+                            <li><a href="/benefits">Benefits</a></li>
+                            <li><a href="/tax">Tax and Self Assessment</a></li>
+                            <li><a href="/housing">Housing and local services</a></li>
+                            <li><a href="/business">Business and self-employed</a></li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <section class="popular-content">
+                        <h2 class="govuk-heading-m">Government activity</h2>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-third">
+                                <h3 class="govuk-heading-s">Departments</h3>
+                                <ul class="govuk-list">
+                                    <li><a href="#">Department for Work and Pensions</a></li>
+                                    <li><a href="#">HM Revenue & Customs</a></li>
+                                    <li><a href="#">Home Office</a></li>
+                                </ul>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <h3 class="govuk-heading-s">News and communications</h3>
+                                <ul class="govuk-list">
+                                    <li><a href="#">Latest updates</a></li>
+                                    <li><a href="#">Press releases</a></li>
+                                    <li><a href="#">Consultations</a></li>
+                                </ul>
+                            </div>
+                            <div class="govuk-grid-column-one-third">
+                                <h3 class="govuk-heading-s">Research and statistics</h3>
+                                <ul class="govuk-list">
+                                    <li><a href="#">Reports</a></li>
+                                    <li><a href="#">Statistics</a></li>
+                                    <li><a href="#">Data</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleDyslexiaMode() {
+            document.body.classList.toggle('dyslexia-friendly');
+        }
+    </script>
+</body>
+</html>

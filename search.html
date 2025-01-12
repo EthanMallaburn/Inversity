@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Government Search</title>
+    <style>
+        /* General styles for the body and layout */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Home button at the top left */
+        .home-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .home-button a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .home-button a:hover {
+            text-decoration: underline;
+        }
+
+        /* Search bar container */
+        .search-container {
+            width: 400px;
+            margin: 100px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        /* Input field styles */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button style */
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Search suggestions */
+        .suggestions {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 5px;
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            display: none;
+        }
+
+        .suggestions div {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .suggestions div:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Show suggestions on hover */
+        input:hover + .suggestions {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Home Button (Top Left) -->
+    <div class="home-button">
+        <a href="index.html">GOV.UK</a>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+        <h2>Government Search</h2>
+        <form action="#" method="GET">
+            <div class="form-group">
+                <label for="search">Search</label>
+                <input type="text" id="search" name="search" placeholder="Search for government services..." oninput="showSuggestions(this.value)">
+            </div>
+            <div id="suggestions" class="suggestions"></div>
+            <div class="form-group">
+                <button type="submit" class="btn">Search</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Sample government-related search terms
+        const suggestions = [
+            "Apply for a passport",
+            "Tax return forms",
+            "Apply for benefits",
+            "Legal advice on immigration",
+            "Register to vote",
+            "Driving license renewal",
+            "Pay council tax",
+            "Apply for universal credit",
+            "Public health services",
+            "Childcare benefits"
+        ];
+
+        function showSuggestions(query) {
+            const suggestionBox = document.getElementById('suggestions');
+            suggestionBox.innerHTML = '';
+            if (query.length > 0) {
+                const filteredSuggestions = suggestions.filter(item => item.toLowerCase().includes(query.toLowerCase()));
+                filteredSuggestions.forEach(item => {
+                    const div = document.createElement('div');
+                    div.textContent = item;
+                    div.onclick = () => {
+                        document.getElementById('search').value = item;
+                        suggestionBox.style.display = 'none';
+                    };
+                    suggestionBox.appendChild(div);
+                });
+                suggestionBox.style.display = filteredSuggestions.length > 0 ? 'block' : 'none';
+            } else {
+                suggestionBox.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

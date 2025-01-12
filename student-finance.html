@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Finance Information - GOV.UK">
+    <title>Student Finance Information - GOV.UK</title>
+    
+    <style>
+        /* Core GOV.UK styles */
+        :root {
+            --govuk-blue: #1d70b8;
+            --govuk-dark-blue: #003078;
+            --govuk-black: #0b0c0c;
+            --govuk-white: #ffffff;
+            --govuk-grey-1: #6f777b;
+            --govuk-grey-2: #b1b4b6;
+            --govuk-grey-3: #f3f2f1;
+            --govuk-green: #00703c;
+            --govuk-yellow: #ffdd00;
+            --beige: #f5f5dc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "GDS Transport", arial, sans-serif;
+            color: var(--govuk-black);
+            line-height: 1.5;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s, letter-spacing 0.3s;
+        }
+
+        /* Header styles */
+        #global-header {
+            background-color: var(--govuk-black);
+            padding: 10px 0;
+            border-bottom: 10px solid var(--govuk-white);
+        }
+
+        .header-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .govuk-header__logotype {
+            color: var(--govuk-white);
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+            display: inline-block;
+            padding-right: 15px;
+        }
+
+        .govuk-header__link {
+            color: var(--govuk-white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Main content */
+        .govuk-width-container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .govuk-main-wrapper {
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        /* Student Finance content */
+        .govuk-homepage {
+            background-color: var(--govuk-white);
+            padding: 30px;
+            border: 1px solid var(--govuk-grey-2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .govuk-heading-xl {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--govuk-black);
+        }
+
+        .govuk-link {
+            color: var(--govuk-blue);
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .govuk-link:hover {
+            color: var(--govuk-dark-blue);
+        }
+
+        /* Section Styling */
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--govuk-black);
+        }
+
+        p, ul {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        /* Dyslexia-friendly mode */
+        body.dyslexia-friendly {
+            background-color: var(--beige);
+            letter-spacing: 0.1em;
+        }
+
+        .govuk-button.dyslexia-btn {
+            margin-top: 20px;
+            background-color: var(--govuk-blue);
+            color: var(--govuk-white);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .govuk-button.dyslexia-btn:hover {
+            background-color: var(--govuk-dark-blue);
+        }
+
+        /* Summarize button and summary styles */
+        .govuk-button.summarize-btn {
+            margin-top: 20px;
+            background-color: var(--govuk-green);
+            color: var(--govuk-white);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .govuk-button.summarize-btn:hover {
+            background-color: var(--govuk-dark-blue);
+        }
+
+        .summary-content {
+            margin-top: 20px;
+            font-size: 1.2rem;
+            background-color: var(--govuk-grey-3);
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .govuk-heading-xl {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="global-header">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <a href="index.html" class="govuk-header__logotype">
+                    GOV.UK
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+            <section class="govuk-homepage">
+                <h1 class="govuk-heading-xl">Student Finance Information</h1>
+                <p>This page provides detailed information about student finance options available in the UK, including how to apply for student loans, grants, and scholarships.</p>
+            </section>
+
+            <!-- What is Student Finance Section -->
+            <section id="what-is-student-finance">
+                <h2>What is Student Finance?</h2>
+                <p>Student finance provides financial support to help you with the costs of higher education, including tuition fees, living costs, and other study-related expenses. It can be in the form of loans, grants, or scholarships. There are several options available, depending on your circumstances.</p>
+            </section>
+
+            <!-- How to Apply Section -->
+            <section id="how-to-apply">
+                <h2>How to Apply</h2>
+                <p>To apply for student finance, you need to complete an online application. Make sure to have your financial information, personal details, and course information ready before you start. The application process includes:</p>
+                <ul>
+                    <li>Registering with the student finance portal</li>
+                    <li>Submitting the required documents</li>
+                    <li>Providing information about your course and tuition fees</li>
+                </ul>
+            </section>
+
+            <!-- Repayment Information Section -->
+            <section id="repayment">
+                <h2>Repayment Information</h2>
+                <p>Student loans are repaid based on your income after you finish your course. Repayments are typically made through payroll, meaning the amount you repay will depend on your earnings.</p>
+                <ul>
+                    <li>If you earn over a certain threshold, you'll start making repayments.</li>
+                    <li>Interest rates are based on inflation and can vary.</li>
+                    <li>There are different repayment plans based on the type of loan you have.</li>
+                </ul>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about student finance or need further assistance, please contact us:</p>
+                <address>
+                    <p>Email: <a href="mailto:studentfinance@gov.uk">studentfinance@gov.uk</a></p>
+                    <p>Phone: 0300 100 0607</p>
+                </address>
+            </section>
+
+            <!-- Dyslexia Button -->
+            <button class="govuk-button dyslexia-btn" onclick="toggleDyslexiaMode()">Enable Dyslexia-friendly Mode</button>
+
+            <!-- Summarize Button -->
+            <button class="govuk-button summarize-btn" onclick="summarizeText()">Summarize Text</button>
+
+            <!-- Summary Section -->
+            <div id="summary-content" class="summary-content"></div>
+
+        </main>
+    </div>
+
+    <script>
+        function toggleDyslexiaMode() {
+            document.body.classList.toggle('dyslexia-friendly');
+            const button = document.querySelector('.dyslexia-btn');
+            if (document.body.classList.contains('dyslexia-friendly')) {
+                button.textContent = 'Disable Dyslexia-friendly Mode';
+            } else {
+                button.textContent = 'Enable Dyslexia-friendly Mode';
+            }
+        }
+
+        function summarizeText() {
+            const content = document.querySelector('.govuk-main-wrapper').innerText;
+
+            // Split the content into sentences
+            const sentences = content.split(/[.?!]\s*/).filter(sentence => sentence.length > 0);
+            
+            // Simple scoring mechanism: count words and give a basic score
+            const wordFrequency = {};
+            const words = content.toLowerCase().split(/\s+/);
+            words.forEach(word => {
+                if (!wordFrequency[word]) wordFrequency[word] = 0;
+                wordFrequency[word]++;
+            });
+
+            // Score each sentence based on the frequency of its words
+            const sentenceScores = sentences.map(sentence => {
+                const sentenceWords = sentence.toLowerCase().split(/\s+/);
+                let score = 0;
+                sentenceWords.forEach(word => {
+                    if (wordFrequency[word]) {
+                        score += wordFrequency[word];
+                    }
+                });
+                return { sentence, score };
+            });
+
+            // Sort sentences by score and pick the top 3-5 sentences for the summary
+            const summarySentences = sentenceScores
+                .sort((a, b) => b.score - a.score)
+                .slice(0, 5) // Adjust this number to change the summary length
+                .map(item => item.sentence)
+                .join('. ') + '.';
+
+            document.getElementById('summary-content').innerText = 'Summary: ' + summarySentences;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Feedback - GOV.UK">
+    <title>Feedback - GOV.UK</title>
+
+    <style>
+        /* Core GOV.UK styles */
+        :root {
+            --govuk-blue: #1d70b8;
+            --govuk-dark-blue: #003078;
+            --govuk-black: #0b0c0c;
+            --govuk-white: #ffffff;
+            --govuk-grey-1: #6f777b;
+            --govuk-grey-2: #b1b4b6;
+            --govuk-grey-3: #f3f2f1;
+            --govuk-green: #00703c;
+            --govuk-yellow: #ffdd00;
+            --beige: #f5f5dc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "GDS Transport", arial, sans-serif;
+            color: var(--govuk-black);
+            line-height: 1.5;
+            margin: 0;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s, letter-spacing 0.3s;
+        }
+
+        /* Header styles */
+        #global-header {
+            background-color: var(--govuk-black);
+            padding: 10px 0;
+            border-bottom: 10px solid var(--govuk-white);
+        }
+
+        .header-wrapper {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .govuk-header__logotype {
+            color: var(--govuk-white);
+            font-weight: bold;
+            font-size: 30px;
+            text-decoration: none;
+            display: inline-block;
+            padding-right: 15px;
+        }
+
+        .govuk-header__link {
+            color: var(--govuk-white);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Feedback Form Styling */
+        .feedback-container {
+            max-width: 960px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: var(--govuk-white);
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .feedback-heading {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--govuk-black);
+            margin-bottom: 20px;
+        }
+
+        .feedback-question {
+            font-size: 20px;
+            color: var(--govuk-black);
+            margin-bottom: 10px;
+        }
+
+        .feedback-options {
+            margin-bottom: 20px;
+        }
+
+        .govuk-form-group {
+            margin-bottom: 20px;
+        }
+
+        .govuk-button {
+            background-color: var(--govuk-blue);
+            color: var(--govuk-white);
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .govuk-button:hover {
+            background-color: var(--govuk-dark-blue);
+        }
+
+        /* Dyslexia-friendly mode */
+        body.dyslexia-friendly {
+            background-color: var(--beige);
+            letter-spacing: 0.1em;
+        }
+
+        /* Change feedback container color when dyslexia mode is enabled */
+        .feedback-container.dyslexia-friendly {
+            background-color: var(--beige);
+        }
+
+        .govuk-button.dyslexia-btn {
+            margin-top: 20px;
+            background-color: var(--govuk-blue);
+            color: var(--govuk-white);
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .govuk-button.dyslexia-btn:hover {
+            background-color: var(--govuk-dark-blue);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .feedback-heading {
+                font-size: 28px;
+            }
+
+            .feedback-question {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header id="global-header">
+        <div class="header-wrapper">
+            <div class="header-global">
+                <a href="index.html" class="govuk-header__logotype">
+                    GOV.UK
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="govuk-width-container">
+        <main class="feedback-container">
+            <h1 class="feedback-heading">Your Feedback</h1>
+
+            <p class="feedback-question">How satisfied are you with the student finance information?</p>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="satisfaction" value="very-satisfied" id="very-satisfied">
+                <label for="very-satisfied">Very Satisfied</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="satisfaction" value="satisfied" id="satisfied">
+                <label for="satisfied">Satisfied</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="satisfaction" value="neutral" id="neutral">
+                <label for="neutral">Neutral</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="satisfaction" value="dissatisfied" id="dissatisfied">
+                <label for="dissatisfied">Dissatisfied</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="satisfaction" value="very-dissatisfied" id="very-dissatisfied">
+                <label for="very-dissatisfied">Very Dissatisfied</label>
+            </div>
+
+            <!-- Additional Questions -->
+            <p class="feedback-question">How clear was the information presented?</p>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="clarity" value="very-clear" id="very-clear">
+                <label for="very-clear">Very Clear</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="clarity" value="clear" id="clear">
+                <label for="clear">Clear</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="clarity" value="neutral" id="neutral-clarity">
+                <label for="neutral-clarity">Neutral</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="clarity" value="unclear" id="unclear">
+                <label for="unclear">Unclear</label>
+            </div>
+
+            <p class="feedback-question">Would you recommend this page to others?</p>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="recommend" value="yes" id="recommend-yes">
+                <label for="recommend-yes">Yes</label>
+            </div>
+            <div class="govuk-form-group feedback-options">
+                <input type="radio" name="recommend" value="no" id="recommend-no">
+                <label for="recommend-no">No</label>
+            </div>
+
+            <p class="feedback-question">What could we do to improve?</p>
+            <div class="govuk-form-group">
+                <textarea rows="4" cols="50" placeholder="Please provide any suggestions or feedback"></textarea>
+            </div>
+
+            <button class="govuk-button">Submit Feedback</button>
+
+            <!-- Dyslexia Button -->
+            <button class="govuk-button dyslexia-btn" onclick="toggleDyslexiaMode()">Enable Dyslexia-friendly Mode</button>
+        </main>
+    </div>
+
+    <script>
+        function toggleDyslexiaMode() {
+            document.body.classList.toggle('dyslexia-friendly');
+            const feedbackContainer = document.querySelector('.feedback-container');
+            feedbackContainer.classList.toggle('dyslexia-friendly');
+            
+            const button = document.querySelector('.dyslexia-btn');
+            if (document.body.classList.contains('dyslexia-friendly')) {
+                button.textContent = 'Disable Dyslexia-friendly Mode';
+            } else {
+                button.textContent = 'Enable Dyslexia-friendly Mode';
+            }
+        }
+    </script>
+
+</body>
+</html>
